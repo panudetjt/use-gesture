@@ -1,5 +1,9 @@
 import { commonConfigResolver } from './commonConfigResolver'
 
+export const DEFAULT_TAP_TIMEOUT = 180
+export const DEFAULT_LONG_PRESS_TIMEOUT = 0
+export const DEFAULT_TAP_MOVE_THRESHOLD = 10
+
 export const tapConfigResolver = {
   ...commonConfigResolver,
   // CoordinatesEngine compatibility - tap doesn't use axis locking
@@ -15,13 +19,13 @@ export const tapConfigResolver = {
   tapDiscrimination(value = false) {
     return value
   },
-  tapTimeout(value = 300) {
+  tapTimeout(value = DEFAULT_TAP_TIMEOUT) {
     return value
   },
-  longPressTimeout(value = 0) {
+  longPressTimeout(value = DEFAULT_LONG_PRESS_TIMEOUT) {
     return value
   },
-  moveThreshold(value = 10) {
+  moveThreshold(value = DEFAULT_TAP_MOVE_THRESHOLD) {
     return value
   },
   mouseOnly(value = true) {
